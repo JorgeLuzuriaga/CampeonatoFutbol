@@ -4,18 +4,15 @@ public class Arbitro extends Persona {
     private int numeroSancionesPitadas;
 
     public void pitarFalta() {
-        // Implementación
     }
 
     public void pitarGol() {
-        // Implementación
     }
 
     public void sancionarJugador() {
-        // Implementación
     }
 
-    // Getters y Setters
+
     public int getNumeroFaltasPitadas() {
         return numeroFaltasPitadas;
     }
