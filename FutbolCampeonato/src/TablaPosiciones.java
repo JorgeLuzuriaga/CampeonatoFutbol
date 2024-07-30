@@ -6,7 +6,6 @@ public class TablaPosiciones {
     private Map<Equipo, Integer> puntos = new HashMap<>();
 
     public void cambiarOrden() {
-        // Implementar lógica para ordenar la tabla de posiciones
     }
 
     public void actualizarPuntos(Equipo equipo, int puntosNuevos) {
