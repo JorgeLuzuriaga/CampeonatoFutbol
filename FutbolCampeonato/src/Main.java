@@ -4,22 +4,18 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        // Crear un árbitro (si es necesario para el contexto del partido)
+
         Arbitro arbitro = new Arbitro();
         arbitro.setNombre("Arbitro 1");
 
-        // Crear un partido y registrar empate
         Partido partido = new Partido();
         partido.setFechaPartido(new Date());
         partido.declararEmpate("2-2");
 
-        // Mostrar resultado del partido
         System.out.println("Resultado del partido: " + partido.getResultado());
         System.out.println("Marcador del partido: " + partido.getMarcador());
 
-    
-    // Esta parte es el segundo requisito
-        // Crear jugadores
+
         Jugador jugador1 = new Jugador();
         jugador1.setNombre("Jugador 1");
 
@@ -32,11 +28,10 @@ public class Main {
         Jugador jugador4 = new Jugador();
         jugador4.setNombre("Jugador 4");
 
-        // Crear equipo
+
         Equipo equipo = new Equipo();
         equipo.setNombre("Equipo 1");
 
-        // Crear inscripciones para dos campeonatos diferentes
         InscripcionEquipo inscripcion1 = new InscripcionEquipo();
         inscripcion1.setEquipo(equipo);
         inscripcion1.registrarParticipante(jugador1);
@@ -47,7 +42,6 @@ public class Main {
         inscripcion2.registrarParticipante(jugador3);
         inscripcion2.registrarParticipante(jugador4);
 
-        // Crear campeonatos
         CampeonatoFutbol campeonato1 = new CampeonatoFutbol();
         campeonato1.setNombre("Campeonato 1");
         campeonato1.setFechaInicio(new Date());
@@ -60,7 +54,7 @@ public class Main {
         campeonato2.setFechaFin(new Date());
         campeonato2.añadirEquipo(inscripcion2);
 
-        // Mostrar resultados
+   
         System.out.println("Campeonato 1 - Equipos:");
         for (InscripcionEquipo inscripcion : campeonato1.getInscripciones()) {
             System.out.println("Equipo: " + inscripcion.getEquipo().getNombre());
@@ -79,22 +73,17 @@ public class Main {
             }
         }
     
-    // tercer requisito 
-                // Crear jugadores
-    
-        // Actualizar puntos en la tabla de posiciones del primer campeonato
-        campeonato1.getTablaPosiciones().actualizarPuntos(equipo, 3); // Ganó un partido
 
-        // Actualizar puntos en la tabla de posiciones del segundo campeonato
-        campeonato2.getTablaPosiciones().actualizarPuntos(equipo, 1); // Empató un partido
+        campeonato1.getTablaPosiciones().actualizarPuntos(equipo, 3); 
+        campeonato2.getTablaPosiciones().actualizarPuntos(equipo, 1); 
 
-        // Mostrar tabla de posiciones del primer campeonato
+
         System.out.println("Tabla de Posiciones - Campeonato 1:");
         for (Map.Entry<Equipo, Integer> entry : campeonato1.getTablaPosiciones().getPuntos().entrySet()) {
             System.out.println("Equipo: " + entry.getKey().getNombre() + ", Puntos: " + entry.getValue());
         }
 
-        // Mostrar tabla de posiciones del segundo campeonato
+
         System.out.println("Tabla de Posiciones - Campeonato 2:");
         for (Map.Entry<Equipo, Integer> entry : campeonato2.getTablaPosiciones().getPuntos().entrySet()) {
             System.out.println("Equipo: " + entry.getKey().getNombre() + ", Puntos: " + entry.getValue());
