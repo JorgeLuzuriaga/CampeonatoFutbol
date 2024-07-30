@@ -7,11 +7,11 @@ public class Partido {
     private String marcador;
 
     public void cambiarMarcador(int golMarcado, Arbitro arbitro) {
-        // Implementación
+    
     }
 
     public void declararGanador(String marcador) {
-        // Implementación
+
     }
 
     public void declararEmpate(String marcador) {
@@ -19,7 +19,6 @@ public class Partido {
         this.marcador = marcador;
     }
 
-    // Getters y Setters
     public String getResultado() {
         return resultado;
     }
